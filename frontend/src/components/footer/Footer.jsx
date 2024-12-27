@@ -16,7 +16,7 @@ const Footer = styled('footer')(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'light' ? '#f5f5f5' : '#121212',
   padding: theme.spacing(6),
   marginTop: theme.spacing(8),
-  textAlign: 'center', // Center text and content
+  width: '100%', // Ensure full width
 }));
 
 const SocialIcon = styled(Link)(({ theme }) => ({
@@ -30,7 +30,7 @@ const SocialIcon = styled(Link)(({ theme }) => ({
 function FooterView() {
   return (
     <Footer>
-      <Container maxWidth="lg">
+      <Container maxWidth={false} sx={{ px: { xs: 2, sm: 6, md: 12 } }}>
         <Grid container spacing={4} justifyContent="space-between">
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom>
@@ -119,4 +119,4 @@ function FooterView() {
   );
 }
 
-export default FooterView; // Correct export
+export default FooterView;
