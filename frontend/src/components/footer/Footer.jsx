@@ -16,7 +16,9 @@ const Footer = styled('footer')(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'light' ? '#f5f5f5' : '#121212',
   padding: theme.spacing(6),
   marginTop: theme.spacing(8),
-  width: '100%', // Ensure full width
+  marginBottom: '-4%',
+  marginLeft:'-1%',
+  width: '164.75%', // Ensure full width
 }));
 
 const SocialIcon = styled(Link)(({ theme }) => ({
@@ -91,7 +93,7 @@ function FooterView() {
             </Box>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={1}>
             <Typography variant="h6" gutterBottom>
               Follow Us
             </Typography>

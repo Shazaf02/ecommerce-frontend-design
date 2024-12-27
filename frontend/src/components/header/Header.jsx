@@ -6,6 +6,7 @@ import MessageIcon from '@mui/icons-material/Message';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { Link } from 'react-router-dom'; // Import Link for routing
 import NavBar from './NavBar';
 
 const Header = () => {
@@ -17,10 +18,10 @@ const Header = () => {
         color: 'black',
         boxShadow: 'none',
         padding: '10px 20px',
-        width: '200%', // Full width for responsiveness
+        width: '174%',
         margin: '0 auto',
-        marginBottom:'100%',
-        marginLeft:'-50%' // Center align for the entire header
+        marginBottom: '100%',
+        marginLeft: '-1%' // Center align for the entire header
       }}
     >
       <Toolbar>
@@ -46,31 +47,13 @@ const Header = () => {
             placeholder="Search"
             sx={{
               width: '100%',
-              maxWidth: '600px', // Limit the max width of the search bar
-              backgroundColor: '#f0f0f0', // Light gray background
+              maxWidth: '600px',
+              backgroundColor: '#f0f0f0',
             }}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
                   <SearchIcon sx={{ color: 'blue' }} />
-                </InputAdornment>
-              ),
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    sx={{
-                      borderRadius: '10px',
-                      marginLeft: '8px',
-                      backgroundColor: 'lightgrey',
-                    }}
-                  >
-                    <Typography
-                      sx={{ color: 'black', marginRight: '6px', fontSize: '14px' }}
-                    >
-                      Search
-                    </Typography>
-                    <SearchIcon sx={{ color: 'black' }} />
-                  </IconButton>
                 </InputAdornment>
               ),
             }}
@@ -80,24 +63,32 @@ const Header = () => {
         {/* Right Section: Profile, Messages, Favorites */}
         <Grid container justifyContent="flex-end" spacing={1} sx={{ flexGrow: 0 }}>
           <Grid item>
-            <IconButton color="inherit">
-              <MessageIcon />
-            </IconButton>
+            <Link to="/messages">
+              <IconButton color="inherit">
+                <MessageIcon sx={{ color: '#333' }} />
+              </IconButton>
+            </Link>
           </Grid>
           <Grid item>
-            <IconButton color="inherit">
-              <ShoppingCartIcon />
-            </IconButton>
+            <Link to="/cart">
+              <IconButton color="inherit">
+                <ShoppingCartIcon sx={{ color: '#333' }} />
+              </IconButton>
+            </Link>
           </Grid>
           <Grid item>
-            <IconButton color="inherit">
-              <AccountCircleIcon />
-            </IconButton>
+            <Link to="/account">
+              <IconButton color="inherit">
+                <AccountCircleIcon sx={{ color: '#333' }} />
+              </IconButton>
+            </Link>
           </Grid>
           <Grid item>
-            <IconButton color="inherit">
-              <FavoriteIcon />
-            </IconButton>
+            <Link to="/favorites">
+              <IconButton color="inherit">
+                <FavoriteIcon sx={{ color: '#333' }} />
+              </IconButton>
+            </Link>
           </Grid>
         </Grid>
       </Toolbar>
